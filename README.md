@@ -1,5 +1,5 @@
 # Estudo censo 2022 IBGE - Gráfico de Crescimento Populacional
-https://github.com/Mateus-Iago/Estudo-Censo-2022---Gr-fico-interativo/blob/main/README.md
+
 ## Sobre
 A ideia desse projeto surgiu quando descobri que o IBGE disponibilizava publicamente os dados do censo realizado a cada 10 anos. Além disso, eles oferecem uma API com suporte para Python, o que facilita a importação dos dados para dentro do código.
 
