@@ -90,6 +90,11 @@ geo_json['features'][0]
 ---
 
 ## Plot do Gráfico com plotly
-Para plotar o mapa de calor dos municípios brasileiros com base na taxa de crescimento populacional, utilizei a biblioteca Plotly, que oferece suporte robusto para esse tipo de visualização.
+Para plotar o mapa de calor dos municípios brasileiros com base na taxa de crescimento populacional, utilizei a biblioteca Plotly, que oferece suporte robusto para esse tipo de visualização. O código do plot com a configuração do layout e parâmetros assim com o resto de todo o código do trabalho está disponivel no notebook deixado nesse repositorio.
+![Tabela importada para o sydra](Imagem/Mapa.PNG)
 
+![Tabela importada para o sydra](Imagem/Mapa2.PNG)
 
+---
+
+# FIM !!!
