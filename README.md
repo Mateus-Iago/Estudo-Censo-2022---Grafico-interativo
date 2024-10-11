@@ -22,11 +22,11 @@ pop = sidrapy.get_table(
 ```
 ### Output:
 ![Tabela importada para o sydra](caminho/para/imagem)
+
 ---
 
 ## Tratamentos
-A tabela vem com os dados de uma maneira que podem ser melhor organizados para a criação do gráfico
-
+Como é possivel perceber, a tabela vem com os dados em uma estrutura um pouco diferente e que dificulta o entendimento, as colunas tem nomes que não fazem muito sentido, aqui vão as transformações realizadas
 ### Removendo acentos
 ```python
 # Removendo acentos para facilitar o estudo
@@ -36,3 +36,38 @@ pop = pop.iloc[1:] # removemos a linha com indice zero que não é uma legenda d
 
 pop.head()
 ```
+### Output:
+![Tabela importada para o sydra](caminho/para/imagem)
+
+### Pivotando a tabela - transformando os valores unicos de D3N em colunas 
+```python
+# Converta a coluna 'V' para numérico, forçando erros a serem convertidos para NaN
+pop['V'] = pd.to_numeric(pop['V'], errors='coerce')
+
+# Pivotando tabela
+pop = pop.pivot_table(index=['D1C', 'D1N'], columns ='D3N', values = 'V').reset_index()
+pop.columns.name = None
+
+print(pop.shape)
+pop.head()
+```
+### Output:
+![Tabela importada para o sydra](caminho/para/imagem)
+
+### Renomeando as colunas
+```python
+# Dicionário para mapeamento das colunas
+column_mapping = {
+    'D1C': 'CD_MUN',
+    'D1N': 'NM_MUN',
+    'Populacao residente': 'POP_RESIDENTE',
+    'Variacao absoluta da populacao residente 2010 compatibilizada': 'VAR_ABS',
+    'Taxa de crescimento geometrico': 'TX_CRESC'
+}
+
+# Renomeando as colunas
+pop.rename(columns = column_mapping, inplace=True)
+pop.head()
+```
+### Output:
+![Tabela importada para o sydra](caminho/para/imagem)
