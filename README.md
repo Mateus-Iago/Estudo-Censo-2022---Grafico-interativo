@@ -21,7 +21,7 @@ pop = sidrapy.get_table(
 )
 ```
 ### Output:
-![Tabela importada para o sydra](Imagem/Acentos)
+![Tabela importada para o sydra](Imagem/Tabela.PNG)
 
 ---
 
@@ -37,7 +37,7 @@ pop = pop.iloc[1:] # removemos a linha com indice zero que não é uma legenda d
 pop.head()
 ```
 ### Output:
-![Tabela importada para o sydra](caminho/para/imagem)
+![Tabela importada para o sydra](Imagem/Acentos.PNG)
 
 ### Pivotando a tabela - transformando os valores unicos de D3N em colunas 
 ```python
@@ -52,7 +52,7 @@ print(pop.shape)
 pop.head()
 ```
 ### Output:
-![Tabela importada para o sydra](caminho/para/imagem)
+![Tabela importada para o sydra](Imagem/Pivot.PNG)
 
 ### Renomeando as colunas
 ```python
@@ -70,4 +70,26 @@ pop.rename(columns = column_mapping, inplace=True)
 pop.head()
 ```
 ### Output:
-![Tabela importada para o sydra](caminho/para/imagem)
+![Tabela importada para o sydra](Imagem/Rename.PNG)
+
+---
+
+## GeoJSON
+Um dos parâmetros essenciais da função do Plotly para gerar o mapa é o geo_json, que contém os dados de delimitação dos territórios. Esses dados, já tratados para todo o território brasileiro, foram coletados do GitHub da FEA.dev USP.
+```python
+# Lendo o arquivo JSON com a delimitação de cada municipio para o plot do gráfico
+
+with urlopen('https://raw.githubusercontent.com/fea-dev-usp/IBGE/master/geojson_2022.json') as response:
+    geo_json = json.load(response)
+
+geo_json['features'][0]
+```
+### Output:
+![Tabela importada para o sydra](Imagem/geojson.PNG)
+
+---
+
+## Plot do Gráfico com plotly
+Para plotar o mapa de calor dos municípios brasileiros com base na taxa de crescimento populacional, utilizei a biblioteca Plotly, que oferece suporte robusto para esse tipo de visualização.
+
+
