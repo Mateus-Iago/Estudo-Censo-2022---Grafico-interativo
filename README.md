@@ -96,5 +96,7 @@ Para plotar o mapa de calor dos municípios brasileiros com base na taxa de cres
 ![Tabela importada para o sydra](Imagem/Mapa2.PNG)
 
 ---
+## Conclusão
+Este projeto foi uma excelente oportunidade para treinar manipulação de dados, trabalhar com chamadas de API utilizando a biblioteca sidrapy e aprender a criar visualizações interativas com o Plotly.
 
 # FIM !!!
